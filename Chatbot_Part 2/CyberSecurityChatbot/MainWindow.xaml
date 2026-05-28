@@ -1,0 +1,151 @@
+﻿<Window x:Class="CyberSecurityChatbot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cybersecurity Awareness Bot"
+        Height="700"
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#0D1117">
+
+    <Grid>
+
+        <!-- Background -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#0F2027" Offset="0"/>
+                <GradientStop Color="#203A43" Offset="0.5"/>
+                <GradientStop Color="#2C5364" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Main Container -->
+        <Border Background="#CC111111"
+                CornerRadius="20"
+                Margin="20"
+                Padding="20">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- HEADER -->
+                <StackPanel Grid.Row="0"
+                            Margin="0,0,0,20">
+
+                    <TextBlock Text="🔐 CYBERSECURITY AWARENESS BOT 🔐"
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Foreground="Lime"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Protect Yourself • Stay Safe Online"
+                               FontSize="16"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               Margin="0,10,0,20"/>
+
+                    <TextBlock Text="CYBER"
+                               FontSize="60"
+                               FontWeight="Bold"
+                               Foreground="Lime"
+                               HorizontalAlignment="Center"
+                               FontFamily="Consolas"/>
+                </StackPanel>
+
+                <!-- CHAT AREA -->
+                <!-- CHAT AREA -->
+                <Border Grid.Row="1"
+        CornerRadius="20"
+        Padding="15"
+        BorderBrush="#55FFFFFF"
+        BorderThickness="1">
+
+                    <Border.Background>
+
+                        <!-- Cyber Background -->
+                        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,1">
+
+                            <GradientStop Color="#ffff"
+                          Offset="0"/>
+
+                            <GradientStop Color="#ffff"
+                          Offset="0.5"/>
+
+                            <GradientStop Color="#ffff"
+                          Offset="1"/>
+
+                        </LinearGradientBrush>
+
+                    </Border.Background>
+
+                    <ScrollViewer x:Name="ChatScrollViewer"
+                                  VerticalScrollBarVisibility="Auto">
+
+                        <!-- WhatsApp Style Messages -->
+                        <StackPanel x:Name="ChatPanel"/>
+
+                    </ScrollViewer>
+                </Border>
+
+                <!-- INPUT AREA -->
+                <Grid Grid.Row="2"
+                      Margin="0,20,0,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="160"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Rounded Input -->
+                    <Border Grid.Column="0"
+                            Background="#222222"
+                            CornerRadius="25"
+                            BorderBrush="Lime"
+                            BorderThickness="2"
+                            Margin="0,0,15,0">
+
+                        <TextBox x:Name="UserInput"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 FontSize="16"
+                                 BorderThickness="0"
+                                 Padding="15"
+                                 CaretBrush="White"
+                                 KeyDown="UserInput_KeyDown"/>
+                    </Border>
+
+                    <!-- Send Button -->
+                    <Button x:Name="SendButton"
+                            Grid.Column="1"
+                            Content="Send"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Background="Lime"
+                            Foreground="Black"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Height="50"
+                            Click="SendButton_Click">
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        CornerRadius="25">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
